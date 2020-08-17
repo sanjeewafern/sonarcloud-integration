@@ -1,5 +1,8 @@
 version: 0.2
 
+- name: SonarCloud Scan
+  uses: SonarSource/sonarcloud-github-action@v1.3
+
 phases:
   install:
     runtime-versions:
