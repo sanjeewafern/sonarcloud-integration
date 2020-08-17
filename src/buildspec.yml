@@ -15,9 +15,9 @@ phases:
       - export PATH=$PATH:./sonar-scanner-3.3.0.1492-linux/bin/
   pre_build:
     commands:
-      - sonar-scanner -Dsonar.organization=$SONARCLOUD_ORG -Dsonar.projectKey=$PROJECT_KEY -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN
+      - sonar-scanner -Dsonar.organization=$sanjeewafern -Dsonar.projectKey=$sanjeewafern_sonarcloud-integration -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$70cc9cefc23a663ba95e5df83b808b251762e95b
       - sleep 5
-      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$PROJECTKEY > analysis.json
+      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$sanjeewafern_sonarcloud-integration > analysis.json
       - cat analysis.json
   build:
     commands:
