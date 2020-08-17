@@ -23,6 +23,10 @@ const App = () => {
     }
   }
 
+  function wrongFunc() {
+    console.log(`Hello ${fakeVariable}`);
+  }
+
   // function to decrease the temprature
   function downTemp() {
     let currTemp = initTemp;
