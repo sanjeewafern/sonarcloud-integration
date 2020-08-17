@@ -1,11 +1,53 @@
-import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+const App = () => {
+
+  // provide the initial value to the useState
+  const [initTemp, setInitTemp] = useState(10);
+  const [temperatureColor, setTemperatureColor] = useState('cold');
+
+  // function to increase the temprature
+  function upTemp() {
+    let currTemp = initTemp;
+    if (currTemp >= 30 || currTemp < 0) {
+      alert('Reached the limit');
+      return
+    }
+    else {
+      if (currTemp > 15) {
+        setTemperatureColor('hot');
+        setInitTemp(currTemp + 1);
+      } else {
+        setInitTemp(currTemp + 1);
+      }
+    }
+  }
+
+  // function to decrease the temprature
+  function downTemp() {
+    let currTemp = initTemp;
+    if (currTemp > 30 || currTemp <= 0) {
+      alert('Reached the limit');
+      return
+    } else {
+      if (currTemp < 15) {
+        setTemperatureColor('cold');
+        setInitTemp(currTemp - 1);
+      } else {
+        setInitTemp(currTemp - 1);
+      }
+    }
+  }
+
   return (
-    <div className="App">
-      
+    <div className='app-container'>
+      <div className='temperature-display-container'>
+        <div className={`temperature-display ${temperatureColor}`}>{initTemp}°C</div>
+      </div>
+      <div className='button-container'>
+        <button onClick={downTemp}>-</button>
+        <button onClick={upTemp}>+</button>
+      </div>
     </div>
   );
 }
