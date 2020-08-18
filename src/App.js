@@ -22,6 +22,24 @@ const App = () => {
       }
     }
   }
+  
+  function fncRumesh(Argument) {
+    let statementWithoutSemicolon
+    if(false){
+      console.log("Never reaching line");
+    }
+    
+    let a = 10;
+    if(a < 5){
+      if (a < 10){
+        if( a < 15){
+          if(a > 40){
+            console.log('inconsistant quots and damn high CC');
+          }
+        }
+      }
+    }
+  }
 
   // function to decrease the temprature
   function downTemp() {
