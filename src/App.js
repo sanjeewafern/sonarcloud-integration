@@ -25,6 +25,7 @@ const App = () => {
 
   // function to decrease the temprature
   function downTemp() {
+    console.log(`Hello ${fakeVariable}`);
     let currTemp = initTemp;
     if (currTemp > 30 || currTemp <= 0) {
       alert('Reached the limit');
