@@ -48,6 +48,9 @@ const App = () => {
       <div className='button-container'>
         <button onClick={downTemp}>-</button>
         <button onClick={upTemp}>+</button>
+        <div>
+          {/* Test file exclusion 1 */}
+        </div>
       </div>
     </div>
   );
