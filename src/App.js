@@ -49,7 +49,7 @@ const App = () => {
         <button onClick={downTemp}>-</button>
         <button onClick={upTemp}>+</button>
         <div>
-          {/* Test file exclusion 2 */}
+          {/* Test file exclusion 3 */}
         </div>
       </div>
     </div>
