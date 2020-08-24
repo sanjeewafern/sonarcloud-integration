@@ -8,6 +8,7 @@ const App = () => {
 
   // function to increase the temprature
   function upTemp() {
+    // test comment
     let currTemp = initTemp;
     if (currTemp >= 30 || currTemp < 0) {
       alert('Reached the limit');
