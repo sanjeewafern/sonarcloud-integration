@@ -25,7 +25,6 @@ const App = () => {
 
   // function to decrease the temprature
   function downTemp() {
-    console.log(`Hello ${fakeVariable}`);
     let currTemp = initTemp;
     if (currTemp > 30 || currTemp <= 0) {
       alert('Reached the limit');
@@ -48,9 +47,6 @@ const App = () => {
       <div className='button-container'>
         <button onClick={downTemp}>-</button>
         <button onClick={upTemp}>+</button>
-        <div>
-          {/* Test file exclusion 3 */}
-        </div>
       </div>
     </div>
   );
