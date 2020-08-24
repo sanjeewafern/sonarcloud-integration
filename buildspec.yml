@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - apt-get update
+      - apt-get install -y jq
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
+      - unzip ./sonar-scanner-cli-3.3.0.1492-linux.zip
+      - export PATH=$PATH:./sonar-scanner-3.3.0.1492-linux/bin/
+  pre_build:
+    commands:
+      - sonar-scanner -Dsonar.organization=$surewayprivacy -Dsonar.projectKey=$surewayprivacy -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$b3558b4157e4fb471c584272cccc7c585c1b2ffb
+      - sleep 5
+      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$surewayprivacy > analysis.json
+      - cat analysis.json
+  build:
+    commands:
+      - echo Building Project
+      - echo Finished Building
+
+cache:
+  paths:
+    - "node_modules/**/*"
