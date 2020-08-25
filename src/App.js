@@ -28,7 +28,7 @@ const App = () => {
   function downTemp() {
     let currTemp = initTemp;
     if (currTemp > 30 || currTemp <= 0) {
-      alert('Reached the limit');
+      alert(undeclaredVariable);
       return
     } else {
       if (currTemp < 15) {
