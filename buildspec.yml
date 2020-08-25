@@ -12,9 +12,9 @@ phases:
       - export PATH=$PATH:./sonar-scanner-3.3.0.1492-linux/bin/
   pre_build:
     commands:
-      - sonar-scanner -Dsonar.organization=$surewayprivacy -Dsonar.projectKey=$surewayprivacy -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$b3558b4157e4fb471c584272cccc7c585c1b2ffb
+      - sonar-scanner -Dsonar.organization=surewayprivacy -Dsonar.projectKey=surewayprivacy -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=b3558b4157e4fb471c584272cccc7c585c1b2ffb
       - sleep 5
-      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$surewayprivacy > analysis.json
+      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=surewayprivacy > analysis.json
       - cat analysis.json
   build:
     commands:
